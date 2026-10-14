@@ -13,6 +13,5 @@ CREATE TABLE incidentes (
     prioridad VARCHAR(20),
     estado VARCHAR(20),
     sucursal VARCHAR(100),
-    sucursal_id INT,
     fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP
 );
