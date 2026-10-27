@@ -4,7 +4,7 @@ const incRouter = require('./routes/incidentes');
 
 const app = express();
 const PORT = 3000;
-const mysql = require('mysql2');
+
 
 app.use(express.json());
 app.use(`/sucursales`, sucRouter);

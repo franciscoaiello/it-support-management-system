@@ -116,5 +116,22 @@ router.patch(`/:id`, (req, res) => {
 
 });
 
+router.delete(`/:id`, (req, res) => {
+    const id = req.params.id;
+
+    connection.query(
+        'DELETE FROM sucursales WHERE id = ?',
+        [id],
+        (error, resultados) => {
+            if(error){
+                res.status(500).json({mensaje: 'Error al eliminar registros.'});
+            }else if(resultados.affectedRows === 0){
+                res.status(404).json({mensaje: 'Sucursal inexistente.'});
+            }else{
+                res.status(200).json({mensaje: 'Registros eliminados con exito.'});
+            }
+        }
+    );
+});
 
 module.exports = router;
